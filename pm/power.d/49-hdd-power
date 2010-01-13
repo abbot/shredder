@@ -1,0 +1,14 @@
+#!/bin/sh
+
+case "$1" in
+	true)
+		echo "**enabling HDD power management"
+		/sbin/hdparm -B 160 /dev/sda
+		;;
+	false)
+		echo "**disabling HDD power management"
+		/sbin/hdparm -B 254 /dev/sda
+		;;
+esac
+
+exit 0
